@@ -39,4 +39,4 @@ O método `calcularXp()` é sobrescrito em `Curso` e `Mentoria`, permitindo cál
 ## ▶️ Como executar
 1. Clone o repositório:
    ```bash
-   git clone <URL_DO_SEU_REPO>
+   git clone <https://github.com/luizcarvalho20/desafio-poo-dio>
