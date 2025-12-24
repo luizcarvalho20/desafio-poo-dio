@@ -1,4 +1,7 @@
-import dominio.*;
+import br.com.dio.desafio.dominio.Bootcamp;
+import br.com.dio.desafio.dominio.Curso;
+import br.com.dio.desafio.dominio.Dev;
+import br.com.dio.desafio.dominio.Mentoria;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -32,16 +35,16 @@ public class Main {
         bootcamp.getConteudos().add(curso2);
         bootcamp.getConteudos().add(mentoria);
 
-        Dev dev = new Dev();
-        dev.setNome("Luiz");
-        dev.inscreverBootcamp(bootcamp);
+        Dev devLuiz = new Dev();
+        devLuiz.setNome("Luiz Carvalho");
+        devLuiz.inscreverBootcamp(bootcamp);
 
         System.out.println("=================================");
-        System.out.println("        DEV: " + dev.getNome());
+        System.out.println("        DEV: " + devLuiz.getNome());
         System.out.println("=================================\n");
 
         System.out.println(">> Conteúdos INSCRITOS");
-        dev.getConteudosInscritos().forEach(conteudo -> {
+        devLuiz.getConteudosInscritos().forEach(conteudo -> {
             if (conteudo instanceof Curso curso) {
                 System.out.println(" - Curso: " + curso.getTitulo()
                         + " (" + curso.getCargaHoraria() + "h)");
@@ -52,16 +55,17 @@ public class Main {
         });
 
         System.out.println("\n>> Progresso realizado...\n");
-        dev.progredir();
-        dev.progredir();
+        devLuiz.progredir();
+        devLuiz.progredir();
+        devLuiz.progredir();
 
         System.out.println(">> Conteúdos CONCLUÍDOS");
-        dev.getConteudosConcluidos().forEach(conteudo -> {
+        devLuiz.getConteudosConcluidos().forEach(conteudo -> {
             System.out.println(" - " + conteudo.getTitulo()
                     + " | XP: " + (int) conteudo.calcularXp());
         });
 
-        System.out.println("\n>> XP TOTAL: " + (int) dev.calcularTotalXp());
+        System.out.println("\n>> XP TOTAL: " + (int) devLuiz.calcularTotalXp());
         System.out.println("=================================");
     }
 }
